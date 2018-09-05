@@ -1,20 +1,61 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 
+import HomePage from './pages/HomePage';
+import ProfilePage from './pages/ProfilePage';
+
 class App extends Component {
+
+  // this function is the first thing that runs
+  // think of it as the entry point to the app
+  // everything u put in here will run before render()
+  componentDidMount() {
+    // to see this message, right click the screen and hit inspect
+    // then go to console tab
+    console.log('lmao');
+
+    this.sup();
+  }
+
+  sup() {
+    prompt('u lit??');
+  }
+
+  // this renders the UI of the page
+  // it runs last
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+    return(
+      <BrowserRouter>
+        <div>
+          <Switch>
+
+            <Route exact path='/' render={() => (
+                <HomePage />
+              )}
+            />
+
+            <Route exact path='/profile' render={() => (
+                <ProfilePage />
+              )}
+            />
+
+          </Switch>
+        </div>
+      </BrowserRouter>
+    )
+    // return (
+    //   <div className="App">
+    //     <header className="App-header">
+    //       <img src={logo} className="App-logo" alt="logo" />
+    //       <h1 className="App-title">Welcome to React</h1>
+    //     </header>
+    //     <p className="App-intro">
+    //       To get started, edit <code>src/App.js</code> and save to reload.
+    //     </p>
+    //   </div>
+    // );
   }
 }
 
