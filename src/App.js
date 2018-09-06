@@ -14,6 +14,8 @@ class App extends Component {
   componentDidMount() {
     // to see this message, right click the screen and hit inspect
     // then go to console tab
+    //yo
+    
     console.log('lmao');
 
     this.sup();
