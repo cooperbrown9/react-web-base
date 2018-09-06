@@ -34,7 +34,9 @@ class ProfilePage extends Component {
 
         {(this.state.friends.map((friend) => (
           <div>
-            <label style={{backgroundColor: friend.favColor}}>{friend.name} Favorite Color: {friend.favColor}</label>
+            <label id="penis" style={{backgroundColor: friend.favColor}} >
+              {friend.name} Favorite Color: {friend.favColor}
+            </label>
           </div>
         )))}
 
